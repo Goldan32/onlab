@@ -1,6 +1,7 @@
 import Adafruit_BBIO.UART as UART
 import serial, io
 import Adafruit_BBIO.GPIO as GPIO
+from datetime import datetime
 
 switch_pin = 'P8_7'
 GPIO.setup(switch_pin,GPIO.OUT)
@@ -13,7 +14,6 @@ def main():
     answer = send_command("get temperature")
     print(answer)
     cleanUp()
-
 
 def send_command(command):
     esp32_serial.write(command.encode())
@@ -32,6 +32,12 @@ def esp32_switch(command):
         return True
     return False
     
+def data_write_to_file(data_type, data)
+    #TODO: open file etc
+    #use send_command() with correct cmd to get data
+    now = datetime.now()
+    #write to correct file
+
 
 def cleanUp():
     GPIO.cleanup()
