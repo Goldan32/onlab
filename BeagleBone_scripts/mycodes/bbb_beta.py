@@ -7,7 +7,7 @@ UART.setup('UART1')
 
 ser = serial.Serial(port='/dev/ttyO1', baudrate=115200, timeout=2, xonxoff=False)
 
-command = "get temperature"
+command = "get humidity"
 ser.write(command.encode())
 #ser.flushInput()
 if (ser.isOpen()):
